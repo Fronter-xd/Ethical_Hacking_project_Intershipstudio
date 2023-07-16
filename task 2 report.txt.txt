@@ -1,0 +1,13 @@
+Title : CROSS SITE SCRIPTING
+
+domain: websecurity.com
+
+subdomain: zero.websecurity.com
+
+Vulnerability : this site is allowing http method and the X-Content-Type-Header is not set.
+
+IMPACT : http methods like POST ,PUT ,DELETE can be harmful for the website like put method could allow clients to save files on the web server
+         and DELETE - method can allow clients to remove files on the web server and 
+         the X-Content-Type-Header could allow the user agent to render the content of the site in a different fashion to the MIME type.
+
+MITIGATION : configure the web server to return a 405 Method Not Allowed status code. Doing so will reduce the likelihood of HTTP verb tampering vulnerabilities being exploited.

@@ -1,0 +1,17 @@
+Title : CROSS SITE SCRIPTING
+
+domain: vulnweb.com
+
+subdomain: testasp.vulnweb.com
+
+Steps to reproduce -
+
+STEP 1 : visit http://testasp.vulnweb.com/
+STEP 2 : on the top menu you will find a search option.
+STEP 3 : click on it and you will be prompted with the search box.
+STEP 4 : you can intercept the request using burpsuite
+STEP 5 : if u type this payload ("broken_site/xss/5?id=<a onmouseover="alert(1)"\>Click me!</a>") in the search box u can see the post posted by admin.
+
+IMPACT : cross site scripting can lead to stealing of user data and in this case it gives access to admins post which can be harmful for your website/company.
+
+MITIGATION : if u want to preventyour website from cross site scripting vulnerability then you can just enable no script on browser.
